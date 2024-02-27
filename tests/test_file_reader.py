@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch, mock_open
-from file_reader import FileReader
+from file_processor.file_reader import FileReader
 
 class TestFileReader(unittest.TestCase):
   @patch('builtins.open', new_callable=mock_open, read_data="id\tname\n1\tJohn\n2\tJane\n3\tBob\n")

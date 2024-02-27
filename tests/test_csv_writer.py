@@ -1,5 +1,5 @@
 import unittest
-from csv_writer import CSVWriter
+from file_processor.csv_writer import CSVWriter
 import os
 import tempfile
 import csv

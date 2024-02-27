@@ -1,13 +1,13 @@
 import unittest
 from unittest.mock import patch, mock_open
 from io import StringIO
-from file_processor import FileProcessor 
+from file_processor.file_processor import FileProcessor
 import os
 import tempfile
 import pdb
 
 class TestFileProcessor(unittest.TestCase):
-  @patch('file_processor.FileReader')
+  @patch('file_processor.file_processor.FileReader')
   def test_successful_processing(self, mock_file_reader):
     mock_file_reader.return_value.simulate_error = False
     
@@ -31,7 +31,7 @@ class TestFileProcessor(unittest.TestCase):
         output_file_path = os.path.join(output_folder, "output.csv")
         self.assertTrue(os.path.exists(output_file_path), "Output file should be created")
 
-  @patch('file_processor.FileReader')
+  @patch('file_processor.file_processor.FileReader')
   def test_failure_processing(self, mock_file_reader):
     mock_file_reader.return_value.simulate_error = True  
 

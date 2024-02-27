@@ -1,5 +1,5 @@
 import unittest
-from data_processor import DataProcessor
+from file_processor.data_processor import DataProcessor
 
 class TestDataProcessor(unittest.TestCase):
   def setUp(self):
@@ -14,8 +14,8 @@ class TestDataProcessor(unittest.TestCase):
     unique_data, second_highest_salary, average_salary = self.data_processor.process_data(sample_data)
 
     self.assertEqual(len(unique_data), 2) 
-    self.assertEqual(unique_data[0]['Gross Salary'], 9460.0)
-    self.assertEqual(unique_data[1]['Gross Salary'], 9840.0)
+    self.assertEqual(unique_data[0]['Gross Salary'], 9840.0)
+    self.assertEqual(unique_data[1]['Gross Salary'], 9460.0)
     self.assertEqual(second_highest_salary, 9460.0)
     self.assertEqual(average_salary, 9650.0)
 
