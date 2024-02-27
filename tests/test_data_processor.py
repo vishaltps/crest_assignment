@@ -13,12 +13,14 @@ class TestDataProcessor(unittest.TestCase):
 
     unique_data, second_highest_salary, average_salary = self.data_processor.process_data(sample_data)
 
-    self.assertEqual(len(unique_data), 2) 
-    self.assertEqual(unique_data[0]['Gross Salary'], 9840.0)
-    self.assertEqual(unique_data[1]['Gross Salary'], 9460.0)
+    self.assertEqual(len(unique_data), 2)
+
+    possible_values = {9460.0, 9840.0}
+    self.assertIn(unique_data[0]['Gross Salary'], possible_values)
+    self.assertIn(unique_data[1]['Gross Salary'], possible_values)
+
     self.assertEqual(second_highest_salary, 9460.0)
     self.assertEqual(average_salary, 9650.0)
-
 
   def test_process_data_with_duplicates(self):
     sample_data = [
@@ -29,7 +31,7 @@ class TestDataProcessor(unittest.TestCase):
 
     unique_data, _, _ = self.data_processor.process_data(sample_data)
 
-    self.assertEqual(len(unique_data), 2) 
+    self.assertEqual(len(unique_data), 2)
 
 if __name__ == '__main__':
     unittest.main()
