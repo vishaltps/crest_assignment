@@ -26,6 +26,6 @@ python3 -m unittest discover tests
 ```
 
 
+##### NOTE:
 
-
-
+In general, I create a separate branch for each feature and do commit frequently. However, i thought for this assignment i need to submit a zip file hence i didn't create a repo earlier. You will only able to see 2-3 commits and I have pushed directly to the master branch.
